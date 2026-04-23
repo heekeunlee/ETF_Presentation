@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETFstyle 5단계 자산관리 프레임워크</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;700&family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --secondary: #3a7bd5;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --accent: #f59e0b;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            overflow: hidden;
+        }
+
+        .slider {
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            height: 100vh;
+            width: 100vw;
+            scroll-snap-align: start;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .background-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.3) blur(2px);
+            z-index: -1;
+            transition: transform 1s ease;
+        }
+
+        section:hover .background-image {
+            transform: scale(1.05);
+        }
+
+        .content {
+            max-width: 1000px;
+            width: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 2rem;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        section.active .content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .text-side h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-side h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .text-side p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: #94a3b8;
+            margin-bottom: 2rem;
+        }
+
+        .text-side ul {
+            list-style: none;
+        }
+
+        .text-side li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: start;
+            font-size: 1.1rem;
+        }
+
+        .text-side li::before {
+            content: '✓';
+            color: var(--primary);
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+
+        .visual-side {
+            position: relative;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .visual-side img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .visual-side:hover img {
+            transform: scale(1.1);
+        }
+
+        .nav-dots {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 100;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: var(--primary);
+            transform: scale(1.5);
+            box-shadow: 0 0 15px var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+                padding: 2rem;
+                margin: 1rem;
+            }
+            .text-side h1 { font-size: 2.5rem; }
+            .visual-side { order: -1; }
+        }
+
+        .scroll-down {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+            40% {transform: translateY(-10px) translateX(-50%);}
+            60% {transform: translateY(-5px) translateX(-50%);}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-dots" id="navDots"></div>
+
+    <div class="slider" id="slider">
+        <!-- Slide 1: Title -->
+        <section id="slide-1">
+            <img src="assets/slide1.png" class="background-image">
+            <div class="content">
+                <div class="text-side">
+                    <h2>Premium Framework</h2>
+                    <h1>ETFstyle 5단계<br>자산관리 프레임워크</h1>
+                    <p>전문적인 자산관리를 위한 혁신적인 시스템</p>
+                </div>
+                <div class="visual-side">
+                    <img src="assets/slide1.png">
+                </div>
+            </div>
+            <div class="scroll-down">↓</div>
+        </section>
+
+        <!-- Slide 2: Why -->
+        <section id="slide-2">
+            <img src="assets/slide2.png" class="background-image">
+            <div class="content">
+                <div class="text-side">
+                    <h2>The Mission</h2>
+                    <h1>왜 필요한가?</h1>
+                    <ul>
+                        <li>금융상품의 불투명성과 수익성 한계 극복</li>
+                        <li>고액 자산가들만의 Family Office 시스템 대중화</li>
+                        <li>개인 투자자를 위한 체계적이고 과학적인 도구 제공</li>
+                    </ul>
+                </div>
+                <div class="visual-side">
+                    <img src="assets/slide2.png">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: 5 STEPS -->
+        <section id="slide-3">
+            <img src="assets/slide3.png" class="background-image">
+            <div class="content">
+                <div class="text-side">
+                    <h2>Overview</h2>
+                    <h1>5 STEPS Process</h1>
+                    <p>자산 증식의 원리를 5단계의 명확한 규칙으로 정의합니다.</p>
+                    <ul>
+                        <li>Step 1: 국가 비중 결정 (Country Allocation)</li>
+                        <li>Step 2: 기본 포트폴리오 (Base Selection)</li>
+                        <li>Step 3: Quant ETF 선정 (Alpha Strategy)</li>
+                        <li>Step 4: 매매 규칙 (Switch & Stop-loss)</li>
+                        <li>Step 5: 정기 리밸런싱 (Monthly Update)</li>
+                    </ul>
+                </div>
+                <div class="visual-side">
+                    <img src="assets/slide3.png">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Step 1 Callocation -->
+        <section id="slide-4">
+            <img src="assets/slide4.png" class="background-image">
+            <div class="content">
+                <div class="text-side">
+                    <h2>Step 01</h2>
+                    <h1>국가 할당</h1>
+                    <p>안정성과 성장성의 균형을 위한 전략적 배분</p>
+                    <ul>
+                        <li>한국(KR) vs 미국(US) 시장의 비중 최적화</li>
+                        <li>시장 모멘텀과 매크로 지표 기반의 결정</li>
+                    </ul>
+                </div>
+                <div class="visual-side">
+                    <img src="assets/slide4.png">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Step 2 Base -->
+        <section id="slide-5">
+            <img src="assets/slide5.png" class="background-image">
+            <div class="content">
+                <div class="text-side">
+                    <h2>Step 02</h2>
+                    <h1>기본 포트폴리오</h1>
+                    <p>흔들리지 않는 자산의 뿌리를 만듭니다.</p>
+                    <ul>
+                        <li>안전자산(채권, 금, 현금)과 위험자산(주식)의 조화</li>
+                        <li>섹터별 고른 분산을 통한 리스크 최소화</li>
+                    </ul>
+                </div>
+                <div class="visual-side">
+                    <img src="assets/slide5.png">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Step 3 Quant -->
+        <section id="slide-6">
+            <img src="assets/slide6.png" class="background-image">
+            <div class="content">
+                <div class="text-side">
+                    <h2>Step 03</h2>
+                    <h1>Quant ETF 선정</h1>
+                    <p>데이터가 증명하는 최상의 종목을 선별합니다.</p>
+                    <ul>
+                        <li>모멘텀, 밸류, 퀄리티 팩터 기반 스코어링</li>
+                        <li>감정을 배제한 기계적인 ETF 선정 프로세스</li>
+                    </ul>
+                </div>
+                <div class="visual-side">
+                    <img src="assets/slide6.png">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Step 4 rules -->
+        <section id="slide-7">
+            <img src="assets/slide7.png" class="background-image">
+            <div class="content">
+                <div class="text-side">
+                    <h2>Step 04</h2>
+                    <h1>매매 규칙</h1>
+                    <p>언제 사고 팔 것인가에 대한 명확한 해답</p>
+                    <ul>
+                        <li>Switching: 더 강력한 모멘텀으로의 이동</li>
+                        <li>Stop-loss: 자산 방어를 위한 엄격한 손절 라인 준수</li>
+                    </ul>
+                </div>
+                <div class="visual-side">
+                    <img src="assets/slide7.png">
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Step 5 rebalancing -->
+        <section id="slide-8">
+            <img src="assets/slide8.png" class="background-image">
+            <div class="content">
+                <div class="text-side">
+                    <h2>Step 05</h2>
+                    <h1>정기 리밸런싱</h1>
+                    <p>지속적인 성장을 위한 마지막 퍼즐</p>
+                    <ul>
+                        <li>매월 정해진 날짜에 포트폴리오 최신화</li>
+                        <li>복리의 마법을 극대화하는 시간의 힘</li>
+                    </ul>
+                </div>
+                <div class="visual-side">
+                    <img src="assets/slide8.png">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const slider = document.getElementById('slider');
+        const sections = document.querySelectorAll('section');
+        const navDots = document.getElementById('navDots');
+
+        // Create dots
+        sections.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.onclick = () => {
+                slider.scrollTo({
+                    top: sections[i].offsetTop,
+                    behavior: 'smooth'
+                });
+            };
+            navDots.appendChild(dot);
+        });
+
+        // Update active slide and dots on scroll
+        const observerOptions = {
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    const index = Array.from(sections).indexOf(entry.target);
+                    document.querySelectorAll('.dot').forEach((dot, i) => {
+                        dot.classList.toggle('active', i === index);
+                    });
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>
