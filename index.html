@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ETFstyle 5단계 자산관리 프레임워크</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;700&family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;700&family=Outfit:wght@300;600;800&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #00d2ff;
@@ -181,8 +184,14 @@
                 padding: 2rem;
                 margin: 1rem;
             }
-            .text-side h1 { font-size: 2.5rem; }
-            .visual-side { order: -1; }
+
+            .text-side h1 {
+                font-size: 2.5rem;
+            }
+
+            .visual-side {
+                order: -1;
+            }
         }
 
         .scroll-down {
@@ -196,12 +205,26 @@
         }
 
         @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
-            40% {transform: translateY(-10px) translateX(-50%);}
-            60% {transform: translateY(-5px) translateX(-50%);}
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0) translateX(-50%);
+            }
+
+            40% {
+                transform: translateY(-10px) translateX(-50%);
+            }
+
+            60% {
+                transform: translateY(-5px) translateX(-50%);
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="nav-dots" id="navDots"></div>
@@ -401,4 +424,5 @@
         sections.forEach(section => observer.observe(section));
     </script>
 </body>
+
 </html>
