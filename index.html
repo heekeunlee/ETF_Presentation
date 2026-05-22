@@ -126,9 +126,8 @@
 
         .text-side li {
             margin-bottom: 1.2rem;
-            display: grid;
-            grid-template-columns: 24px 1fr;
-            align-items: start;
+            position: relative;
+            padding-left: 28px;
             font-size: 1.15rem;
             line-height: 1.6;
             color: var(--text-muted);
@@ -137,10 +136,12 @@
 
         .text-side li::before {
             content: '✓';
+            position: absolute;
+            left: 0;
+            top: 2px;
             color: var(--primary);
             font-weight: bold;
             font-size: 1.2rem;
-            margin-top: 2px;
         }
 
         .text-side li b {
@@ -231,7 +232,7 @@
             .text-side h1 { font-size: 1.8rem; }
             .text-side h2 { font-size: 1.1rem; margin-bottom: 0.5rem; }
             .text-side p { font-size: 1.05rem; margin-bottom: 1rem; }
-            .text-side li { font-size: 1rem; grid-template-columns: 20px 1fr; margin-bottom: 0.8rem; }
+            .text-side li { font-size: 1rem; padding-left: 24px; margin-bottom: 0.8rem; }
             .visual-side { max-width: 70%; margin-bottom: 0.5rem; }
         }
     </style>
