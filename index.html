@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETFstyle 5단계 자산관리 프레임워크</title>
+    <title>현명한 ETF 투자 방법</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;700&family=Outfit:wght@300;600;800&display=swap"
         rel="stylesheet">
@@ -68,15 +68,15 @@
         }
 
         .content {
-            max-width: 1000px;
-            width: 100%;
+            max-width: 1500px;
+            width: 95%;
             background: var(--glass);
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 2rem;
             padding: 4rem;
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.8fr 1fr;
             gap: 3rem;
             align-items: center;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
@@ -110,9 +110,9 @@
         }
 
         .text-side p {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             line-height: 1.6;
-            color: #94a3b8;
+            color: #e2e8f0;
             margin-bottom: 2rem;
         }
 
@@ -121,10 +121,11 @@
         }
 
         .text-side li {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             display: flex;
             align-items: start;
-            font-size: 1.1rem;
+            font-size: 1.25rem;
+            line-height: 1.5;
         }
 
         .text-side li::before {
@@ -232,12 +233,11 @@
     <div class="slider" id="slider">
         <!-- Slide 1: Title -->
         <section id="slide-1">
-            <img src="assets/slide1.png" class="background-image">
             <div class="content">
                 <div class="text-side">
                     <h2>Premium Framework</h2>
-                    <h1>현명한 ETF 투자 방법</h1>
-                    <p>누구나 배워 익혀 자신만의 자산 포트폴리오를 구성하고 효과적으로 관리함으로써 노후 부자가 될 수 있도록 돕는 프레임워크<br><br>By ETFstyle, 김세형</p>
+                    <h1>현명한 ETF 투자 방법<br>5단계 자산관리 프레임워크</h1>
+                    <p style="font-size: 1.5rem; margin-top: 2rem;">누구나 배워 익혀 자신만의 자산 포트폴리오를 구성하고<br>효과적으로 관리함으로써 노후 부자가 될 수 있도록 돕는 프레임워크<br><br>By 김세형</p>
                 </div>
                 <div class="visual-side">
                     <img src="assets/slide1.png">
@@ -248,15 +248,17 @@
 
         <!-- Slide 2: Why -->
         <section id="slide-2">
-            <img src="assets/slide2.png" class="background-image">
             <div class="content">
                 <div class="text-side">
                     <h2>The Mission</h2>
-                    <h1>왜 필요한가?</h1>
-                    <ul style="font-size:1.0rem;">
+                    <h1>5단계 자산관리 프레임워크는 왜 만들어졌는가?</h1>
+                    <ul>
                         <li><b>간접투자의 문제점:</b> 나의 작은 돈 그리고 그 돈들이 모인 거대한 펀드</li>
-                        <li><b>당신은 고액 자산가인가?:</b><br>- 랩어카운트 (일반적, 4~10% 미만 기대수익)<br>- 사모펀드/패밀리오피스 (수십억 이상 초고액 자산가 전유물)</li>
-                        <li><b>왜?:</b> 일반인들은 왜 부자들의 투자 방식을 구경만 하고, 실패하는 전략만을 따라 하는가?</li>
+                        <li><b>당신은 고액 자산가인가?:</b><br>
+                            - 랩어카운트: 가장 일반적이나 4~10% 미만의 기대 수익. 1.5% 정도의 수수료 지급<br>
+                            - 수십억 이상일 때: 사모펀드, 법인설립+자산관리 등<br>
+                            - 초고액 자산가인 경우: 패밀리오피스 방식으로 세무사, 회계사, 변호사 등 직원을 둠</li>
+                        <li><b>왜?:</b> 대다수의 일반인들은 왜 부자들의 투자 방식을 보고 따라하지는 않고, 구경만 하는가? 그리고 실패하는 전략만을 따라 하는가?</li>
                     </ul>
                 </div>
                 <div class="visual-side">
@@ -267,18 +269,16 @@
 
         <!-- Slide 3: 5 STEPS -->
         <section id="slide-3">
-            <img src="assets/slide3.png" class="background-image">
             <div class="content">
                 <div class="text-side">
                     <h2>Overview</h2>
-                    <h1>5 STEPS Process</h1>
-                    <p style="font-size:1.1rem;">ETFstyle 5단계 자산관리 프레임워크 개괄</p>
-                    <ul style="font-size:1.0rem;">
-                        <li><b>1단계:</b> 국가별 할당 (한국, 미국 등 비중 정의)</li>
-                        <li><b>2단계:</b> 기본 포트폴리오 선택 (영구/사계절/올웨더)</li>
-                        <li><b>3단계:</b> 퀀트 전략에 따른 ETF 선택 (모멘텀/섹터 등)</li>
-                        <li><b>4단계:</b> 종목교체 및 손절 규칙 (분할 매도/매수, 손절)</li>
-                        <li><b>5단계:</b> 리밸런싱 (월말 지정일에 비중 재조정)</li>
+                    <h1>5단계 자산관리 프레임워크 개괄</h1>
+                    <ul>
+                        <li><b>1. 자산의 국가별 할당:</b> 한국 + 미국, 또는 한국 + 미국 + 추가 1국. 할당 비중에 대한 자신만의 규칙 정의 (모멘텀 권장)</li>
+                        <li><b>2. 기본 포트폴리오 선택:</b> 영구, 사계절, 올웨더 포트폴리오 등을 그대로 차용하거나 변화를 줌. 3개 정도 기본틀로 선정</li>
+                        <li><b>3. 퀀트전략에 따른 ETF 선택:</b> 모멘텀, 트렌드, 섹터 전략 등 전략 선택 후 ETF 선정하여 포트폴리오 채워넣기</li>
+                        <li><b>4. 종목교체 및 손절 규칙:</b> 더 좋은 종목 출현 시 분할 매도/매수. 예상과 다르게 급락하는 경우 반드시 손절 후 기다림</li>
+                        <li><b>5. 리밸런싱:</b> 월말 또는 자신이 정한 날짜에 모든 포트폴리오에 대한 리밸런싱을 수행</li>
                     </ul>
                 </div>
                 <div class="visual-side">
@@ -289,17 +289,16 @@
 
         <!-- Slide 4: Step 1 Callocation -->
         <section id="slide-4">
-            <img src="assets/slide4.png" class="background-image">
             <div class="content">
                 <div class="text-side">
                     <h2>Step 01</h2>
                     <h1>자산의 국가별 할당</h1>
-                    <p style="font-size:1.1rem;">자신만의 규칙으로 국가별 비중을 정의합니다.</p>
-                    <ul style="font-size:1.0rem;">
-                        <li><b>5:5 / 6:4 전략:</b> 한/미 5:5 또는 모멘텀 강한 곳에 6</li>
-                        <li><b>위험조정 모멘텀 비중:</b> 모멘텀/변동성 값에 따라 결정</li>
-                        <li><b>단순 모멘텀 비중:</b> 최근 1달 모멘텀 비율로 조절</li>
-                        <li><b>한쪽에 밀어주기:</b> 상승세가 강한 나라에 모든 비중 밀기</li>
+                    <ul>
+                        <li><b>1. 5:5 전략:</b> 한국, 미국을 각각 5 대 5로 설정. 만약 3개국이면 3등분</li>
+                        <li><b>2. 6:4 전략:</b> 한국, 미국 중 최근 한달 상승세가 강한 나라에 6, 약한 쪽에 4. 3개국이면 5:3:2</li>
+                        <li><b>3. 위험조정 모멘텀 비중 전략:</b> 모멘텀 / 변동성 값에 따라 비중 결정 (모멘텀은 크고, 변동성은 낮은 논리)</li>
+                        <li><b>4. 단순 모멘텀 비중 전략:</b> 최근 1달 모멘텀을 비율로 삼아 비중 조절</li>
+                        <li><b>5. 한쪽에 밀어주기:</b> 최근 상승세가 강한 나라에 모든 비중 밀기</li>
                     </ul>
                 </div>
                 <div class="visual-side">
@@ -310,16 +309,17 @@
 
         <!-- Slide 5: Step 2 Base -->
         <section id="slide-5">
-            <img src="assets/slide5.png" class="background-image">
             <div class="content">
                 <div class="text-side">
                     <h2>Step 02</h2>
                     <h1>기본 포트폴리오 선택</h1>
-                    <p style="font-size:1.1rem;">자산 규모와 성향에 맞춘 흔들림 없는 뼈대</p>
-                    <ul style="font-size:1.0rem;">
-                        <li><b>개념:</b> 주식/채권/원자재/현금 등 각 자산 비중 유지</li>
-                        <li><b>선택 기준:</b> 최근 1~3달 모멘텀 우수 및 최대손실(MDD) 최소화</li>
-                        <li><b>운영 개수:</b> 보통 3가지 선택 (1개당 최대 1억 정도 적합)</li>
+                    <ul style="font-size: 1.15rem;">
+                        <li><b>1. 기본 포트폴리오란?:</b><br>
+                            - 주식:채권:금/원자재:현금을 일정 비율(예: 25%) 균등배분하고 유지하는 방식<br>
+                            - 대표 ETF인 KOSPI200 또는 S&P500 종목 등을 사용함<br>
+                            - 정적 자산배분을 기본으로 하며, 운영이 어려운 동적 배분 전략은 앱/사이트에서 배제함</li>
+                        <li><b>2. 선택기준:</b> 최근 1달 또는 3달 모멘텀이 우수하고, 최대손실(MDD)이 적을 것</li>
+                        <li><b>3. 기본 포트폴리오 개수:</b> 3가지 선택. 규모에 따라 가감 가능 (1개 포트폴리오당 금액 최대 1억 정도가 적합). 동일 포트폴리오 3개 선택도 가능.</li>
                     </ul>
                 </div>
                 <div class="visual-side">
@@ -330,16 +330,18 @@
 
         <!-- Slide 6: Step 3 Quant -->
         <section id="slide-6">
-            <img src="assets/slide6.png" class="background-image">
             <div class="content">
                 <div class="text-side">
                     <h2>Step 03</h2>
-                    <h1>Quant ETF 선정</h1>
-                    <p style="font-size:1.1rem;">데이터 기반의 규칙으로 감정을 배제합니다.</p>
-                    <ul style="font-size:1.0rem;">
-                        <li><b>퀀트란?:</b> 사전 검증된 규칙(모멘텀 등) 기반 투자</li>
-                        <li><b>선택 방법:</b> 우수한 성적을 보이는 퀀트 전략 내 ETF 매수</li>
-                        <li><b>주의사항:</b> K방산 vs K방산&우주 처럼 비슷한 종목 중복 선택 피하기 (분산투자 효과 저해)</li>
+                    <h1>퀀트 전략에 따른 ETF 선택</h1>
+                    <ul>
+                        <li><b>1. 퀀트란?:</b> "데이터로 투자하는 방법". 사람의 감정 개입을 최소화하고 사전 검증된 규칙(모멘텀, 저변동성 등) 기반 투자</li>
+                        <li><b>2. 전략에 따른 ETF 선택:</b><br>
+                            - 우수한 성적을 보이는 퀀트 전략에 존재하는 ETF 매수<br>
+                            - 종목은 포트폴리오 당 2개~5개 이하로 함 (관리 어려움 방지)</li>
+                        <li><b>3. 선택 시 주의사항:</b><br>
+                            - 비슷한 종목 중복 피하기 (예: PLUS K방산, SOL K방산, TIGER K방산&우주, TIGER 200 중공업 등)<br>
+                            - 유사 종목은 하락 시 분산투자 효과가 전혀 발휘되지 못함</li>
                     </ul>
                 </div>
                 <div class="visual-side">
@@ -350,17 +352,20 @@
 
         <!-- Slide 7: Step 4 rules -->
         <section id="slide-7">
-            <img src="assets/slide7.png" class="background-image">
             <div class="content">
                 <div class="text-side">
                     <h2>Step 04</h2>
-                    <h1>매매 및 손절 규칙</h1>
-                    <p style="font-size:1.1rem;">언제 사고 팔 것인가에 대한 명확한 해답</p>
-                    <ul style="font-size:0.95rem;">
-                        <li><b>익절은 없다:</b> 충분히 수익이 났다고 단타 방식으로 팔지 않음</li>
-                        <li><b>종목 교체:</b> 더 좋은 종목 출현 시 교체 (매수는 오후/매도는 오전)</li>
-                        <li><b>손절(Stop Loss):</b> 고점 대비 특정 비율 하락 시 철저히 손절.</li>
-                        <li><b>추적:</b> 손절 후에도 일부(1주)를 남겨두고 회복 시 재매수</li>
+                    <h1>종목 교체 및 손절 규칙</h1>
+                    <ul style="font-size: 1.05rem;">
+                        <li><b>1. 익절 규칙이란 없다?:</b> 큰 금액 운영 시 단타로 사고 팔지 않음. 수익 났다고 교체하는 사고방식 버림</li>
+                        <li><b>2. 종목 교체 규칙:</b><br>
+                            - 더 좋은 종목이 나타나거나 정한 순위에서 벗어난 경우 매도<br>
+                            - 매수/매도 모두 50%씩 2~3회에 걸쳐 분할 실시<br>
+                            - 매수는 오후(공급 몰림), 매도는 오전(수요 몰림) 권장</li>
+                        <li><b>3. 손절 규칙:</b><br>
+                            - 최고 수익 이후 특정 비율 하락 시 매도(Stop Loss) 철저<br>
+                            - 종가 확인 및 다음날 오전 미회복 시 매도 권장<br>
+                            - 손절 후 반드시 1주를 남겨두고 회복 시 재매수</li>
                     </ul>
                 </div>
                 <div class="visual-side">
@@ -371,16 +376,17 @@
 
         <!-- Slide 8: Step 5 rebalancing -->
         <section id="slide-8">
-            <img src="assets/slide8.png" class="background-image">
             <div class="content">
                 <div class="text-side">
                     <h2>Step 05</h2>
-                    <h1>정기 리밸런싱</h1>
-                    <p style="font-size:1.1rem;">장기적인 우상향을 위한 필수 관리 작업</p>
-                    <ul style="font-size:1.0rem;">
-                        <li><b>월말 효과:</b> 월급 등 수요 증가로 월초보다 월말 리밸런싱이 유리</li>
-                        <li><b>리밸런싱:</b> 정기적(보통 월 1회)으로 자산 비중을 맞추는 작업</li>
-                        <li><b>주의점:</b> 하락이 명확한 자산은 비중 축소 가능, 상승 추세 전환 시 반드시 매수</li>
+                    <h1>정기적 리밸런싱</h1>
+                    <ul>
+                        <li><b>1. 월말 효과:</b><br>
+                            - 월급 등 수요가 높아져 월초보다 월말 리밸런싱 시 수익이 좋음<br>
+                            - 월말에 많이 오른 종목을 매도하는 것이 유리. 오르지 않은 종목은 월말 매수해도 무리 없음</li>
+                        <li><b>2. 리밸런싱이란?:</b><br>
+                            - 정기적(한달에 한번)으로 각 자산의 비중을 원래 목적대로 맞추는 작업<br>
+                            - 안 좋을 것으로 예상되는 자산은 비중 축소 가능하나, 상승 추세로 전환된 경우 반드시 재매수</li>
                     </ul>
                 </div>
                 <div class="visual-side">
